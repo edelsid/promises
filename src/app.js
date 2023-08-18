@@ -3,12 +3,11 @@ import json from './parser';
 
 export default class GameSavingLoader {
   static load() {
-    const data = read()
+    return read()
       .then((response) => json(response))
       .then((response) => {
         const GameSaving = JSON.parse(response);
         return GameSaving;
       });
-    return data;
   }
 }
